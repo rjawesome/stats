@@ -1,1 +1,37 @@
-frontTeamCSA
+<html>
+    <head></head>
+    <body>
+
+        <div id="body">
+          <a href="new.html"> New</a>
+        </div>
+
+        <script>
+            fetch('https://teamoops.nighthawkcoding.ml/api/stats/all')
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+      const names = data.map(i => i.name);
+      console.log(names)
+      for (var i = 0; i < names.length; i++){
+        console.log(i)
+        var elem = document.createElement("a")
+        elem.href = "statsCalc.html?" + names[i];
+        elem.innerHTML = names[i]
+        document.getElementById("body").appendChild(elem)
+      }
+  
+      
+    });
+         </script>
+
+         <style>
+          a{
+            display: block;
+
+
+
+          }
+         </style>
+    </body>
+</html>
