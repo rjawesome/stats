@@ -1,0 +1,43 @@
+<div id="page">
+    <form id="calc" action = "https://teamoops.nighthawkcoding.ml/api/stats/new" method="post">
+    <div id="items">
+    <input name="name" placeholder="Name">
+    </div>
+    <button id="add-new">Add new</button>
+    <button> Submit </button>
+    </div>
+</form>
+    
+    <script>
+    var curItems = 0;
+    var itemsDiv = document.getElementById("items");
+    
+    document.getElementById("add-new").onclick = function () {
+      var newInput = document.createElement("input");
+      newInput.type = "number";
+      newInput.placeholder = "Item #" + (curItems+1).toString();
+      newInput.id = "item"+curItems;
+      newInput.name = "data";
+    
+      itemsDiv.appendChild(newInput);
+      curItems++;
+      return false;
+    }
+    </script>
+    
+    <style>
+    input[type="text"] {
+        display: block;
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 2px solid green;
+      border-radius: 4px;
+    }
+    
+    #page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    </style> 
