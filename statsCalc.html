@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body class="p-3 m-0 border-0 bd-example">
+        <h1>Stats Calculator</h1>
+        <h2>Input</h2>
+        <form>
+          <div class="mb-3">
+            <label for="data" class="form-label">Numerical data seperated by space</label>
+            <input type="text" class="form-control" id="data" placeholder="Data">
+          </div>
+        </form>  
+       <div id="summaryTable">
+        <h2>Summary</h2> 
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Count</th>
+                <th scope="col">Mean</th> 
+                <th scope="col">Median</th>
+                <th scope="col">Standard Deviation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id ="countID" scope="row">6</td>
+                <td id = "mean"></td>
+                <td id = "median"></td>
+                <td id = "standarddeviation"></td>
+              </tr>
+            </tbody> 
+          </table> 
+       </div> 
+       <script>
+          fetch('https://teamoops.nighthawkcoding.ml/api/stats/dataset/'+window.location.href.split("?")[1])
+  .then((response) => response.json())
+  .then((data) => {
+    const actualData = data[0];
+    document.getElementById("mean").innerHTML = actualData.mean;
+    document.getElementById("median").innerHTML = actualData.median;
+    document.getElementById("standarddeviation").innerHTML = actualData.standardDeviation;
+    document.getElementById("data").value = actualData.data;
+
+
+    
+  });
+       </script>
+    </body>
+</html>
