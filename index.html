@@ -3,10 +3,14 @@
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     </head>
-    <body>
+    <body style= "background-color:antiquewhite">
 
         <div id="body">
-          <a href="new.html"> New</a>
+          <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush" id ="card1"> 
+              <li class="list-group-item"><a href="new.html"> New</a></li>
+            </ul>
+          </div>
         </div>
 
         <script>
@@ -18,14 +22,13 @@
       console.log(names)
       for (var i = 0; i < names.length; i++){
         console.log(i)
-        var card = document.createElement("div")
+        var card = document.createElement("li")
         var elem = document.createElement("a")
         elem.href = "statsCalc.html?" + names[i];
         elem.innerHTML = names[i]
-        elem.className = "card-body"
-        card.className = "card"
+        card.className = "list-group-item"
         card.appendChild(elem)
-        document.getElementById("body").appendChild(card)
+        document.getElementById("card1").appendChild(card)
       }
   
       
