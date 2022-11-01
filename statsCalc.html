@@ -24,10 +24,11 @@
             </thead>
             <tbody>
               <tr>
-                <td id ="countID" scope="row">6</td>
+                <td id ="countID" scope="row"></td>
                 <td id = "mean"></td>
                 <td id = "median"></td>
                 <td id = "standarddeviation"></td>
+          
               </tr>
             </tbody> 
           </table> 
@@ -41,6 +42,7 @@
     document.getElementById("median").innerHTML = actualData.median;
     document.getElementById("standarddeviation").innerHTML = actualData.standardDeviation;
     document.getElementById("data").value = actualData.data;
+    document.getElementById("countID").innerHTML = actualData.count;
 
 
     
