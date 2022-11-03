@@ -33,6 +33,14 @@
       curItems++;
       return false;
     }
+
+    async function addFooter() {
+    const resp = await fetch("layouts/nav.html");
+    const html = await resp.text();
+    document.getElementById("page").insertAdjacentHTML("beforebegin", html);
+}
+
+addFooter();
     </script>
     
     <style>
