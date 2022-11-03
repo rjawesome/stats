@@ -39,7 +39,7 @@
     });
 
     async function addFooter() {
-    const resp = await fetch("_layouts/layout.html");
+    const resp = await fetch("layouts/layout.html");
     const html = await resp.text();
     document.getElementById("content").insertAdjacentHTML("beforebegin", html);
 }
