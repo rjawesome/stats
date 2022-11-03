@@ -12,7 +12,7 @@
                 Data Sets
               </div>
               <ul class="list-group list-group-flush" id ="card1"> 
-                <li class="list-group-item"><a href="new.html"> New</a></li>
+               
               </ul>
             </div>
           </div>
@@ -39,7 +39,7 @@
     });
 
     async function addFooter() {
-    const resp = await fetch("layouts/layout.html");
+    const resp = await fetch("layouts/nav.html");
     const html = await resp.text();
     document.getElementById("content").insertAdjacentHTML("beforebegin", html);
 }
@@ -60,9 +60,7 @@ addFooter();
           body, html {
             height: 100%;
           }
-          #nav {
-            height: 10%;
-          }
+         
          </style>
     </body>
 </html>
