@@ -35,6 +35,14 @@
             </tbody> 
           </table> 
        </div> 
+       <h2>Histogram</h2>
+       <img id = "histogram" alt = "This is a Histogram plot to sort the data into bins and display quantative data">
+       <h2>Dot Plot</h2>
+       <img id = "dot-plot" alt = "This is a Dot plot to represent the frequency of each number with dots">
+       <h2>Box Plot</h2>
+       <img id = "box-plot" alt = "This is a box plot to display the median, mins, max, and quartiles">
+
+
        </div>
        <script>
           fetch('https://teamoops.nighthawkcoding.ml/api/stats/dataset/'+window.location.href.split("?")[1])
@@ -46,6 +54,10 @@
     document.getElementById("standarddeviation").innerHTML = actualData.standardDeviation;
     document.getElementById("data").value = actualData.data;
     document.getElementById("countID").innerHTML = actualData.count;
+    document.getElementById("histogram").src = actualData.histogramImg;
+    document.getElementById("dot-plot").src = actualData.dotPlotImg;
+    document.getElementById("box-plot").src = actualData.boxPlotImg;
+
 
 
     
@@ -63,6 +75,11 @@ addFooter();
           height: 50px !important;
 
         }
+      
+        img {
+          margin-bottom: 30px;
+        }
+
        </style>
     </body>
 </html>
