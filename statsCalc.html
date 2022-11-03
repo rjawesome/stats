@@ -41,8 +41,8 @@
        <img id = "dot-plot" alt = "This is a Dot plot to represent the frequency of each number with dots">
        <h2>Box Plot</h2>
        <img id = "box-plot" alt = "This is a box plot to display the median, mins, max, and quartiles">
-
-
+       <h2>Stem Plot</h2>
+       <p id = "stem-plot"></p>
        </div>
        <script>
           fetch('https://teamoops.nighthawkcoding.ml/api/stats/dataset/'+window.location.href.split("?")[1])
@@ -57,6 +57,8 @@
     document.getElementById("histogram").src = actualData.histogramImg;
     document.getElementById("dot-plot").src = actualData.dotPlotImg;
     document.getElementById("box-plot").src = actualData.boxPlotImg;
+    // actualData.stemPlot = "| 1 | 2.0 3.0 4.0 5.0 6.0 8.0\n| 3 | 4\n" FOR LOCAL TESTING
+    document.getElementById("stem-plot").innerHTML = actualData.stemPlot.replaceAll("\n", "<br>").replaceAll(" ", "&nbsp;");
 
 
 
@@ -78,6 +80,11 @@ addFooter();
       
         img {
           margin-bottom: 30px;
+        }
+
+        p {
+          font-size: 27px;
+          font-family: monospace;
         }
 
        </style>
