@@ -1,7 +1,10 @@
 fetch('https://teamoops.nighthawkcoding.ml/api/stats/dataset/'+window.location.href.split("?")[1])
 .then((response) => response.json())
 .then((data) => {
+  // gets the first dataset for the name
   const actualData = data[0];
+  
+  // go to all the elements and set their values based on the data recieved from API
   document.getElementById("mean").innerHTML = actualData.mean;
   document.getElementById("median").innerHTML = actualData.median;
   document.getElementById("standarddeviation").innerHTML = actualData.standardDeviation;
@@ -17,6 +20,7 @@ fetch('https://teamoops.nighthawkcoding.ml/api/stats/dataset/'+window.location.h
   
 });
 
+// Fetches nav from layouts and adds to the page
 async function addNav() {
   const resp = await fetch("layouts/nav.html");
   const html = await resp.text();
