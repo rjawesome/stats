@@ -1,4 +1,4 @@
-fetch('https://teamoops.nighthawkcoding.ml/api/stats/dataset/'+window.location.href.split("?")[1])
+fetch('https://stats-backend.rohanj.dev/api/stats/dataset/'+window.location.href.split("?")[1])
 .then((response) => response.json())
 .then((data) => {
   // gets the first dataset for the name
