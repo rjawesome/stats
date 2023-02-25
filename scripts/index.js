@@ -1,4 +1,4 @@
-fetch('https://teamoops.nighthawkcoding.ml/api/stats/all')
+fetch('https://stats-backend.rohanj.dev/api/stats/all')
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
